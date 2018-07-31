@@ -1,0 +1,28 @@
+
+<p>username: {{username()}}</p>
+	
+
+  <p>expdate: {{expDate()}}</p>
+  	
+  <p>roles: {{roles()}}</p>
+	
+  <p>namne: {{name()}} </p>
+<p>
+	access_token: {{getToken()}}
+	</p>
+
+
+	 <div class="panel-body">
+    	 <p *appHasRole="[]">
+  		(A) Cualquier rol
+	</p>
+	<p *appHasRole="['ROL_GestionLibros', 'admin']">
+  		(A) Rol ROL_GestionLibros o admin
+	</p>
+	<p *appHasRole="['admin']">
+  		(A) Rol admin
+	</p>
+</div> 
+
+Dash<BR/>Dash<BR/>Dash<BR/>Dash<BR/>
+ 

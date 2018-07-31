@@ -1,0 +1,10 @@
+{
+  "name": "keycloaklib",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "keycloak-js": "^3.4.3",    
+    "rxjs": "^6.0.0"
+  }
+}

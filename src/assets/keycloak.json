@@ -1,0 +1,10 @@
+{
+  "realm": "linecom3",
+  "auth-server-url": "http://keycloak1.linecom.local:8230/auth",
+  "ssl-required": "external",
+  "resource": "MyClientID",
+  "credentials": {
+    "secret": "81614eb0-97b1-47c6-b6b4-98de3516516a"
+  }
+  
+}

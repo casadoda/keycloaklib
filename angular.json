@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "keycloaklib": {
+      "root": "projects/keycloaklib",
+      "sourceRoot": "projects/keycloaklib/src",
+      "projectType": "library",
+      "prefix": "keycloaklib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/keycloaklib/tsconfig.lib.json",
+            "project": "projects/keycloaklib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/keycloaklib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/keycloaklib/src/test.ts",
+            "tsConfig": "projects/keycloaklib/tsconfig.spec.json",
+            "karmaConfig": "projects/keycloaklib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/keycloaklib/tsconfig.lib.json",
+              "projects/keycloaklib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "lib-kc"
