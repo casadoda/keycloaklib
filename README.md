@@ -26,7 +26,34 @@ KeycloakModule.forRoot()
 
 ## Usages
 
-### Guard
+### AuthGuard
+
+A generic AuthGuard, has been created to help you bootstrap your security configuration. This class already checks if the user is logged in and check if the authenticated user has any of the required roles.
+
+Using the following routes config:
+```
+{
+    path: '',
+    component: HomeComponent      
+},
+{
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard]  
+},
+{
+    path: 'console',
+    component: AdminComponent,
+    data: {
+      allowedRoles: ['admin', 'superadmin']
+    }      
+  }
+```
+
+* The path '' can be accessed from anonymous users and authenticated users.
+* The path 'dashboard' can be accessed only from authenticated users.
+* The path 'console' can be accessed only from authenticated users who have 'admin', 'superadmin' or both roles.
+
 
 ### AuthenticathedHttpClient
 
