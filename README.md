@@ -44,6 +44,7 @@ Using the following routes config:
 {
     path: 'console',
     component: AdminComponent,
+    canActivate: [AuthGuard], 
     data: {
       allowedRoles: ['admin', 'superadmin']
     }      
@@ -57,6 +58,25 @@ Using the following routes config:
 
 ### AuthenticathedHttpClient
 
+TODO
+
 ### Has Role Structural Directive
 
+Example:
+
+```
+<admin-console *appHasRole="['admin']"></admin-console>
+```
+
+
 ### Only For Roles Method decorator
+
+Example:
+
+```
+@OnlyForRoles(['admin']) methodName() {} 
+```
+
+### Checking roles with ngIf, ngStyle,...
+
+TODO
