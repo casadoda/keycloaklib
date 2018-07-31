@@ -1,27 +1,35 @@
-# LibKc
+# Keycloaklib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
+The main goal of this library is to integrate with a Keycloak Server. The library provides the following features:
 
-## Development server
+- A Keycloak Service which wraps the keycloak-js methods to be used in Angular, giving extra functionalities to the original functions and adding new methods to make it easier to be consumed by Angular applications.
+- Generic AuthGuard implementation, so you can customize your routes limiting the access to a set of roles.
+- A HttpClient that adds the authorization header to all HttpClient requests. 
+- Structural directive to include the selected component if the user has one of the roles required.
+- Method decorator to help protecting business methods to allowed roles.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Install
 
-## Code scaffolding
+### Add dependency
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Add keycloaklib@0.1.0 to your project dependencies.
 
-## Build
+### Keycloak config file
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Include in your assets the keycloak.json config file
 
-## Running unit tests
+### Initialize KeycloakLibrary
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In your main module in the 'imports' section add the following reference:
 
-## Running end-to-end tests
+KeycloakModule.forRoot()
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Usages
 
-## Further help
+### Guard
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### AuthenticathedHttpClient
+
+### Has Role Structural Directive
+
+### Only For Roles Method decorator
